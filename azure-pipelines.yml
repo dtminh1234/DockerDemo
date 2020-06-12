@@ -5,14 +5,14 @@ variables:
   imageName: 'docker-demo:$(Build.BuildId)'
 
 steps:
-- script: docker build -f DockerDemo/Dockerfile -t $(dockerId).azurecr.io/$(imageName) .
+- script: docker build -f DockerDemo/Dockerfile -t minhreg.azurecr.io/$(imageName) .
   workingDirectory: src/
   displayName: 'Docker Build'
 
 - script: |
-    docker login -u $(dockerId) -p $pswd $(dockerId).azurecr.io
+    docker login -u minhreg -p $pswd minhreg.azurecr.io
     docker push $(dockerId).azurecr.io/$(imageName)
   env:
-    pswd: $(dockerPassword)
+    pswd: JYCWx9EQM59QtW0fa/tqKBeI0/lszWVN
   workingDirectory: src/
   displayName: 'Docker Push'
