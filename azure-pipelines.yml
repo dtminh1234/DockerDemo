@@ -11,7 +11,7 @@ steps:
 
 - script: |
     docker login -u minhreg -p $pswd minhreg.azurecr.io
-    docker push $(dockerId).azurecr.io/$(imageName)
+    docker push minhreg.azurecr.io/$(imageName)
   env:
     pswd: JYCWx9EQM59QtW0fa/tqKBeI0/lszWVN
   workingDirectory: src/
