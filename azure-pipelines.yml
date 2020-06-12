@@ -2,7 +2,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  imageName: 'docker-demo:$(Build.BuildId)'
+  imageName: 'docker-demo'
 
 steps:
 - script: docker build -f DockerDemo/Dockerfile -t minhreg.azurecr.io/$(imageName) .
